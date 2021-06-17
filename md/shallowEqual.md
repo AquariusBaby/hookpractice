@@ -1,4 +1,4 @@
-#shallowEqual浅比较函数
+# shallowEqual浅比较函数
 ---
 
  - 浅比较：浅比较就是只比较第一级;

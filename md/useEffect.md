@@ -146,6 +146,101 @@ function SearchResults({ query }) {
 
 **问题七：useEffect中的使用async await**
 
+```
+// 一个错误的写法
 
+useEffect(async () => {
+  await ....
+}, []);
+
+```
+
+Effect回调是同步的，以防止出现竞争条件。得把async函数放在里面
+
+```
+// 正确的写法
+useEffect(() => {
+  async function fetchData() {
+    const result = await axios(getFetchUrl());
+    setData(result.data);
+  }
+}, []);
+```
 
 **问题八：React竞态问题**
+
+下面是一个典型的在class组件里发请求的例子：
+```
+class Article extends Component {
+  state = {
+    article: null
+  };
+  componentDidMount() {
+    this.fetchData(this.props.id);
+  }
+  async fetchData(id) {
+    const article = await API.fetchArticle(id);
+    this.setState({ article });
+  }
+  // ...
+}
+```
+
+上面的代码埋伏了一些问题。**它并没有处理更新的情况**。所以第二个你能够在网上找到的经典例子是下面这样的：
+
+```
+class Article extends Component {
+  state = {
+    article: null
+  };
+  componentDidMount() {
+    this.fetchData(this.props.id);
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.id !== this.props.id) {
+      this.fetchData(this.props.id);
+    }
+  }
+  async fetchData(id) {
+    const article = await API.fetchArticle(id);
+    this.setState({ article });
+  }
+  // ...
+}
+```
+
+这显然好多了！但依旧有问题。有问题的原因是请求结果返回的顺序不能保证一致。比如我先请求 {id: 10}，然后更新到{id: 20}，但{id: 20}的请求更先返回。请求更早但返回更晚的情况会错误地覆盖状态值。
+
+这被叫做**竞态**，这在混合了async / await（假设在等待结果返回）和自顶向下数据流的代码中非常典型（props和state可能会在async函数调用过程中发生改变）。
+
+如果你使用的异步方式支持取消，那太棒了。你可以直接在清除函数中取消异步请求。
+
+或者，最简单的权宜之计是**用一个布尔值来跟踪它**：
+
+```
+function Article({ id }) {
+  const [article, setArticle] = useState(null);
+
+  useEffect(() => {
+    let didCancel = false;
+
+    async function fetchData() {
+      const article = await API.fetchArticle(id);
+      if (!didCancel) {
+        setArticle(article);
+      }
+    }
+
+    fetchData();
+
+    return () => {
+      didCancel = true;
+    };
+  }, [id]);
+
+  // ...
+}
+```
+
+**问题九：Suspense**
+有待补充中...
