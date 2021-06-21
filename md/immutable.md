@@ -46,7 +46,7 @@ JavaScript在语言层面上并没有实现不可变数据，*怎么解决？*
     - 因为函数组件没有state，所以React.memo只比较props。
     - 还有就是，如果 props 相等，areEqual 会返回 true；如果 props 不相等，则返回 false。这与 shouldComponentUpdate 方法的返回值相反。
     - React.memo 为高阶组件。（接受一个组件，返回一个组件；源码上走bailoutOnAlreadyFinishedWork）；
-    - *推荐使用 React.useMemo 而不是 React.memo，因为在组件通信时存在 React.useContext 的用法，这种用法会使所有用到的组件重渲染，只有 React.useMemo 能处理这种场景的按需渲染。（有待考量）*
+    <!-- - *推荐使用 React.useMemo 而不是 React.memo，因为在组件通信时存在 React.useContext 的用法，这种用法会使所有用到的组件重渲染，只有 React.useMemo 能处理这种场景的按需渲染。（有待考量）*
         ```
         // 像这样
         const App: React.FC<{ title: string }> = ({ title }) => {
@@ -56,7 +56,7 @@ JavaScript在语言层面上并没有实现不可变数据，*怎么解决？*
         App.defaultProps = {
             title: 'Function Component'
         }
-        ```
+        ``` -->
     - 因为函数组件被 React.memo 包裹，且其实现中拥有 useState，useReducer 或 useContext 的 Hook，当 context 发生变化时，它仍会重新渲染。因为React.memo只判断props，不判断context；
     - 如何处理，可以参考[这个](https://github.com/facebook/react/issues/15156)
 

@@ -5,9 +5,9 @@
  - 基础的hook
    - [x] [useState](https://github.com/AquariusBaby/hookpractice/blob/main/md/useState.md)
    - [x] [useEffect](https://github.com/AquariusBaby/hookpractice/blob/main/md/useEffect.md)
-   - [ ] useContext
+   - [x] [useContext](https://github.com/AquariusBaby/hookpractice/blob/main/md/useContext.md)
  - 额外的hook
-   - [ ] useCallback
+   - [x] useCallback
    - [ ] useMemo
    - [ ] useRef
    - [ ] useLayoutEffect
@@ -20,7 +20,13 @@
    - [x] [幂等性](https://github.com/AquariusBaby/hookpractice/blob/main/md/幂等性.md)
  - React的immutable的相关问题
    - [x] [immutable](https://github.com/AquariusBaby/hookpractice/blob/main/md/immutable.md)
-   - [x] [PureComponent的浅比较原理](https://github.com/AquariusBaby/hookpractice/blob/main/md/PureComponent的浅比较原理.md)
+   - [x] [PureComponent的浅比较原理](https://github.com/AquariusBaby/hookpractice/blob/main/md/shallowEqual.md)
+   
+ - React的设计模式
+   - [ ] React的组件组合
+   - [ ] React的组件继承
+   - [ ] render props
+   - [ ] HOC
  - [上次分享的内容](https://github.com/AquariusBaby/hookpractice/blob/main/md/hook.md)
 
 ---
