@@ -50,6 +50,18 @@ A1: 官方文档指出过，无需担心新建函数会导致性能问题，因�
 
 我们来看个例子：
 ```javascript
+import React from 'react';
+
+function Comp() {
+    const onClick = () => {
+        console.log('打印');
+    }
+    
+    return <div onClick={onClick}>Comp组件</div>
+}
+```
+当Comp组件自身触发刷新或作为子组件跟随父组件刷新时，我们注意到onClick会被重新赋值。为了"提升性能"，使用useCallback包裹onClick以达到缓存的目的，像下面这样
+```javascript
 import React, { useCallback } from 'react';
 
 function Comp() {
@@ -61,9 +73,7 @@ function Comp() {
 }
 ```
 
-👆 这个用法，非但没性能提升，还不如不使用useCallback的情况；
-
-我们来看下对上面的改写代码逻辑结构之后：
+这个用法，非但没性能提升，还不如不使用useCallback的情况；我们来看下对上面的改写代码逻辑结构之后：
 
 ```javascript
 import React, { useCallback } from 'react';

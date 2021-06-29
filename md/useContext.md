@@ -39,6 +39,9 @@ const MyContext = React.createContext(default);
 </MyContext.Provider>
 ```
 
+// 待补充：react-redux的实现原理
 <!-- 这个时候你可能会想到react-redux是怎么做的： -->
+
+<!-- [新老context的API对比]https://juejin.cn/post/6844903683931504647 -->
 
 

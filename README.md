@@ -8,10 +8,10 @@
    - [x] [useContext](https://github.com/AquariusBaby/hookpractice/blob/main/md/useContext.md)
  - 额外的hook
    - [x] useCallback
-   - [ ] useMemo
+   - [x] useMemo
    - [ ] useRef
    - [ ] useLayoutEffect
-   - [ ] useReducer
+   - [x] [useReducer](https://github.com/AquariusBaby/hookpractice/blob/main/md/useReducer.md)
    - [ ] useImperativeHandle
    - [ ] useDebugValue
  - 函数式编程的一些理念
