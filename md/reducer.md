@@ -21,7 +21,7 @@ expect(countReducer(1, { type: 'sub' })).equal(0); // 成功
 reducer需要保持幂等性，更加可预测、可测试。如果每次返回同一个state，就无法保证无论执行多少次都是相同的结果
 
 2. React中的state比较方案
-React在比较oldState和newState的时候是使用Object.is函数，如果是同一个对象则不会出发组件的re-render。 可以[参考官方文档bailing-out-of-a-dispatch](https://reactjs.org/docs/hooks-reference.html#bailing-out-of-a-dispatch)。
+React在比较oldState和newState的时候是使用Object.is函数，如果是同一个对象则不会触发组件的re-render。 可以[参考官方文档bailing-out-of-a-dispatch](https://reactjs.org/docs/hooks-reference.html#bailing-out-of-a-dispatch)。
 
 **action 的理解**
 action：用来表示触发的行为。
@@ -33,5 +33,5 @@ action：用来表示触发的行为。
  - 语法：(state, action) => newState
  - Immutable：每次都返回一个newState， 永远不要直接修改state对象
  - Action：一个常规的Action对象通常有type和payload（可选）组成
-    - type： 本次操作的类型，也是 reducer 条件判断的依据
-    - payload： 提供操作附带的数据信息
+    - type：本次操作的类型，也是 reducer 条件判断的依据
+    - payload：提供操作附带的数据信息
