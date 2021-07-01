@@ -15,10 +15,11 @@ const memoizedCallback = useCallback(
 
 当你把回调函数传递给经过优化的并使用引用相等性去避免非必要渲染（例如 shouldComponentUpdate）的子组件时，它将非常有用。[看别人的例子](https://codesandbox.io/s/usecallback1-yu1sp)。
 
+
 > * useCallback 本质是 useMemo 的语法糖，因为函数也是对象；
 所以有：```useCallback(fn, deps)``` 相当于 ```useMemo(() => fn, deps)```
 > * 注意```shallowEqual(() => {}, () => {}) // 浅比较下这两个函数是不相等的```；
-> * useCallback 通常是搭配 React.memo 或者 shouldComponentUpdate 使用；
+> * useCallback 通常是搭配 React.memo 或者 shouldComponentUpdate 使用；为什么这样说，[请看例子](https://codesandbox.io/s/usecallback-8fubp?file=/src/App.js)
 
 **Q1：是否需要把所有的方法都用 useCallback 包一层？**
 
