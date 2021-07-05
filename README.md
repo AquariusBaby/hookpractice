@@ -12,8 +12,11 @@
    - [x] [useRef](https://github.com/AquariusBaby/hookpractice/blob/main/md/useRef.md)
    - [ ] useLayoutEffect
    - [x] [useReducer](https://github.com/AquariusBaby/hookpractice/blob/main/md/useReducer.md)
-   - [ ] useImperativeHandle
-   - [ ] useDebugValue
+   - [x] [useImperativeHandle](https://github.com/AquariusBaby/hookpractice/blob/main/md/useImperativeHandle.md)
+   - [x] [useDebugValue](https://github.com/AquariusBaby/hookpractice/blob/main/md/useDebugValue.md)
+
+---
+
  - 函数式编程的一些理念
    - [x] [函数式编程](https://github.com/AquariusBaby/hookpractice/blob/main/md/函数式编程.md)
    - [x] [确定性算法](https://github.com/AquariusBaby/hookpractice/blob/main/md/确定性算法.md)
@@ -27,6 +30,25 @@
    - [ ] React的组件继承
    - [ ] render props
    - [ ] HOC
+
+ - React的渲染专题
+
+---
+
+ - React.Suspense
+
+ - React.lazy
+
+ - Profiler
+
+ - Portals
+
+ - 错误边界
+
+ - React的diff算法
+
+---
+
  - [上次分享的内容](https://github.com/AquariusBaby/hookpractice/blob/main/md/hook.md)
 
 ---
