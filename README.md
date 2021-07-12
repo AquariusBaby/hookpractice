@@ -26,26 +26,30 @@
    - [x] [PureComponent的浅比较原理](https://github.com/AquariusBaby/hookpractice/blob/main/md/shallowEqual.md)
    
  - React的设计模式
-   - [ ] React的组件组合
-   - [ ] React的组件继承
+   <!-- - [ ] React的组件组合 -->
+   <!-- - [ ] React的组件继承 -->
    - [ ] render props
-   - [ ] HOC
-
- - React的渲染专题
+   - [x] [HOC（高阶组件）](https://github.com/AquariusBaby/hookpractice/blob/main/md/高阶组件.md)
 
 ---
 
- - React.Suspense
+ - [ ] React的渲染专题
 
- - React.lazy
+ - [ ] React的diff专题
 
- - Profiler
+ - [ ] setState
 
- - Portals
+---
 
- - 错误边界
+ - [ ] React.Suspense
 
- - React的diff算法
+ - [ ] React.lazy
+
+ - [ ] Profiler
+
+ - [ ] Portals
+
+ - [ ] 错误边界
 
 ---
 

@@ -28,11 +28,12 @@ const MyContext = React.createContext(default);
 [对应的context的4种写法](https://codesandbox.io/s/contextheusecontext-o05ol?file=/src/App.js)
 
 
-> * 当 Provider 的 value 值发生变化时（ 这里的对比方式是<u>Object.is(obj, obj)</u> ），它内部的所有消费组件都会重新渲染。
+> * 当 Provider 的 value 值发生变化时（ 这里的对比方式是<u>Object.is(obj, obj)</u> ），它内部的所有消费组件都会重新渲染。// (源码上有时间可以看看)
 > * Provider 及其内部 consumer 组件都不受制于 **shouldComponentUpdate 函数**、也不受制于 **React.memo 的第二个比较函数**。
 > * 因此当 consumer 组件在其祖先组件退出更新的情况下也能更新 **（这里的意思是，哪怕consumer组件的父级的 shouldComponentUpdate 返回false 或者 React.memo 的第二个参数返回true，也照样更新）** （这是新context，但旧的context与之相反，所以之前一直不被官方推荐使用）[新老context的对比](https://juejin.cn/post/6907546624441090055)。
 > * 所以要注意传递对象的情况
-```
+
+```javascript
 <!-- 所以你应该避免这么做： -->
 <MyContext.Provider value={{something: 'something'}}>
     <Toolbar />
