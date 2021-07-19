@@ -25,10 +25,10 @@
    - [x] [immutable](https://github.com/AquariusBaby/hookpractice/blob/main/md/immutable.md)
    - [x] [PureComponent的浅比较原理](https://github.com/AquariusBaby/hookpractice/blob/main/md/shallowEqual.md)
    
- - React的设计模式
+ - React的设计模式-组合
    <!-- - [ ] React的组件组合 -->
    <!-- - [ ] React的组件继承 -->
-   - [ ] render props
+   - [x] [render props](https://github.com/AquariusBaby/hookpractice/blob/main/md/renderProps.md)
    - [x] [HOC（高阶组件）](https://github.com/AquariusBaby/hookpractice/blob/main/md/高阶组件.md)
 
 ---
@@ -37,7 +37,9 @@
 
  - [ ] React的diff专题
 
- - [ ] setState
+ - [ ] 深入理解setState
+
+ - [ ] React的合成事件
 
 ---
 
